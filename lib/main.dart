@@ -74,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   onSaved:(val){
                     _authData['email']=val;
+                    print(_authData['email']);
 
                   },
                 ),
@@ -103,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _submit() {
+    _formKey.currentState.validate();
     _formKey.currentState.save();
   }
 }
