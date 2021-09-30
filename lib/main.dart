@@ -93,6 +93,111 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   },
                 ),
+TextFormField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  validator:(val){
+                    if(val.isEmpty || val.length<3 ){
+                      return "passwordcis too short";
+                    }return null;
+                  },
+                  onSaved:(val){
+                    _authData['password']=val;
+                    print(_authData['password']);
+
+                  },
+                ),
+TextFormField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  validator:(val){
+                    if(val.isEmpty || val.length<3 ){
+                      return "passwordcis too short";
+                    }return null;
+                  },
+                  onSaved:(val){
+                    _authData['password']=val;
+                    print(_authData['password']);
+
+                  },
+                ),
+TextFormField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  validator:(val){
+                    if(val.isEmpty || val.length<3 ){
+                      return "passwordcis too short";
+                    }return null;
+                  },
+                  onSaved:(val){
+                    _authData['password']=val;
+                    print(_authData['password']);
+
+                  },
+                ),
+TextFormField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  validator:(val){
+                    if(val.isEmpty || val.length<3 ){
+                      return "passwordcis too short";
+                    }return null;
+                  },
+                  onSaved:(val){
+                    _authData['password']=val;
+                    print(_authData['password']);
+
+                  },
+                ),
+TextFormField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  validator:(val){
+                    if(val.isEmpty || val.length<3 ){
+                      return "passwordcis too short";
+                    }return null;
+                  },
+                  onSaved:(val){
+                    _authData['password']=val;
+                    print(_authData['password']);
+
+                  },
+                ),
+TextFormField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  validator:(val){
+                    if(val.isEmpty || val.length<3 ){
+                      return "passwordcis too short";
+                    }return null;
+                  },
+                  onSaved:(val){
+                    _authData['password']=val;
+                    print(_authData['password']);
+
+                  },
+                ),
+TextFormField(
+                  decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  validator:(val){
+                    if(val.isEmpty || val.length<3 ){
+                      return "passwordcis too short";
+                    }return null;
+                  },
+                  onSaved:(val){
+                    _authData['password']=val;
+                    print(_authData['password']);
+
+                  },
+                ),
                 if(_authMode ==AuthMode.SignUp)
                   TextFormField(
                     enabled: _authMode==AuthMode.SignUp,
