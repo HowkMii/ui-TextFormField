@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   validator:(val){
                     if(val.isEmpty || !val.contains('@')){
                       return "Invailed email!";
-                    }
+                    }return null;
                   },
                   onSaved:,
                 )
