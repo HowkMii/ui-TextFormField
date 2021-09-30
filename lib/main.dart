@@ -37,6 +37,19 @@ class _MyHomePageState extends State<MyHomePage> {
     'password':'',
 
   };
+  var _isLoading = false;
+  final _passwordController = TextEditingController();
+  void _switchAuthMode(){
+    if(_authMode==AuthMode.Login){
+      setState(() {
+              _authMode=AuthMode.SignUp;
+            });
+    }else{
+      setState(() {
+              _authMode=AuthMode.Login;
+            });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
