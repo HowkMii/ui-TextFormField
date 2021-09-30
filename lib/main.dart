@@ -56,9 +56,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Auth"),
       ),
       body: Center(
+        child: Form(
+          key: _formKey,
+          child:SingleChildScrollView(
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(labelText: "Email"),
+                  keyboardType: TextInputType.emailAddress,
+                  validator:(val){
+                    if(val.isEmpty || !val.contains('@')){
+                      return "Invailed email!";
+                    }
+                  },
+                  onSaved:,
+                )
+              ],
+            ),
+          ) ,
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
