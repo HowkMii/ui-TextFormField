@@ -93,6 +93,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   },
                 ),
+                if(_authMode ==AuthMode.SignUp)
+                  TextFormField(
+                    enabled: _authMode==AuthMode.SignUp,
+                    decoration: InputDecoration(labelText: 'Confirm Password'),
+                    obscureText: true,
+                    validator: _authMode==AuthMode.SignUp?(value){
+                      if(value!=_passwordController.text){
+                        return 'Password do not match';
+                      }return null;
+
+                    }
+                      :null,
+
+                  ),
+               
                 RaisedButton(
                   child: Text(_authMode == AuthMode.Login? 'Login':'SignUp'),
                   onPressed: _submit,
