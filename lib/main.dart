@@ -72,7 +72,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       return "Invailed email!";
                     }return null;
                   },
-                  onSaved:,
+                  onSaved:(val){
+                    _authData['email']=val;
+
+                  },
+                ),
+                RaisedButton(
+                  child: Text(_authMode == AuthMode.Login? 'Login':'SignUp'),
+                  onPressed: _submit,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  padding: EdgeInsets.symmetric(horizontal: 30,vertical: 8),
+                    color: Theme.of(context).primaryColor,
+                    textColor: Theme.of(context).primaryTextTheme.button.color,
+                ),
+                FlatButton(
+                  child: Text(
+                    '${_authMode==AuthMode.Login?'SignUp':'Login'} INSTED'
+                  ),
+                  onPressed: _switchAuthMode,
+                  padding: EdgeInsets.symmetric(horizontal: 30,vertical: 4),
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  textColor: Theme.of(context).primaryColor,
                 )
               ],
             ),
@@ -80,5 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  void _submit() {
+    _formKey.currentState.save();
   }
 }
