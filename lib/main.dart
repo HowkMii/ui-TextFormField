@@ -27,9 +27,16 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
+enum AuthMode{SignUp,Login}
 
 class _MyHomePageState extends State<MyHomePage> {
+  final GlobalKey<FormState> _formKey = GlobalKey();
+  AuthMode _authMode= AuthMode.Login;
+  Map<String, String> _authData ={
+    'email':'',
+    'password':'',
 
+  };
 
   @override
   Widget build(BuildContext context) {
