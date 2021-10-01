@@ -205,7 +205,7 @@ TextFormField(
                     obscureText: true,
                     validator: _authMode==AuthMode.SignUp?(value){
                       if(value!=_passwordController.text){
-                        return 'Password do not match';
+                        return 'Password do not match match match';
                       }return null;
 
                     }
