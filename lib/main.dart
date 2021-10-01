@@ -99,7 +99,7 @@ TextFormField(
                   obscureText: true,
                   validator:(val){
                     if(val.isEmpty || val.length<3 ){
-                      return "passwordcis too short";
+                      return "passwordcis too short dh";
                     }return null;
                   },
                   onSaved:(val){
