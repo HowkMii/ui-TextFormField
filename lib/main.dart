@@ -78,48 +78,40 @@ class _MyHomePageState extends State<MyHomePage> {
               const Tab(text: 'HSV'),
               const Tab(text: 'Material'),
               const Tab(text: 'Block'),
-
             ],
           ),
         ),
-        body: Center(
-          child: RaisedButton(
-            child: Text('change my color'),
-            color: currentC,
-            onPressed: (){
-              showDialog(
-                context: context,
-                builder: (BuildContext ctx){
-                  return AlertDialog(
-                    title: Text('Select a color'),
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        SingleChildScrollView(
-                          child: BlockPicker( 
-                          pickerColor: currentC,
-                          onColorChanged: changeC,
-                          availableColors: _defaultColors,
+        body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
+          children:<Widget>[
+           Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               RaisedButton(
+                 elevation: 3.0,
+                 onPressed: (){
+                   showDialog(
+                     context: context, 
+                     builder: (BuildContext context){
+                       return AlertDialog(
+                         titlePadding: const EdgeInsets.all(0.0) ,
+                         contentPadding: const EdgeInsets.all(0.0),
+                         content: SingleChildScrollView(
+                           child: ColorPicker(
+                             onColorChanged:changeC,
+                             pickerColor: currentC,
+                            ),
                           ),
-                        ),
-                        RaisedButton(
-                          child:Text("Close") ,
-                          onPressed: (){
-                            Navigator.pop(ctx);
-                          },
-                        )
-    
-                      ],
-                    ),
-                  );
-                }
-                );
-            },
-    
-            ),
-          
-          
-    
+
+                       );
+                     }
+                    );
+
+                 },
+                ),
+             ],
+          ),
+          ]
         ), // This trailing comma makes auto-formatting nicer for build methods.
       ),
     );
