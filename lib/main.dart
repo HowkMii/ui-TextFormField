@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 void main() {
   runApp(MyApp());
@@ -74,7 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   content: Column(
                     children: <Widget>[
                       SingleChildScrollView(
-                        child: null,
+                        child: BlockPicker(
+                        pickerColor: currentC,
+                        onColorChanged: changeC,
+                        ),
                       ),
                       RaisedButton(
                         child:Text("Close") ,
