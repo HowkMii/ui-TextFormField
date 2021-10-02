@@ -68,48 +68,60 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Auth"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: Text('change my color'),
-          color: currentC,
-          onPressed: (){
-            showDialog(
-              context: context,
-              builder: (BuildContext ctx){
-                return AlertDialog(
-                  title: Text('Select a color'),
-                  content: Column(
-                    children: <Widget>[
-                      SingleChildScrollView(
-                        child: BlockPicker(
-                        pickerColor: currentC,
-                        onColorChanged: changeC,
-                        availableColors: _defaultColors,
-                        ),
-                      ),
-                      RaisedButton(
-                        child:Text("Close") ,
-                        onPressed: (){
-                          Navigator.pop(ctx);
-                        },
-                      )
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Auth"),
+          bottom: TabBar(
+            tabs:<Widget> [
+              const Tab(text: 'HSV'),
+              const Tab(text: 'Material'),
+              const Tab(text: 'Block'),
 
-                    ],
-                  ),
-                );
-              }
-              );
-          },
-
+            ],
           ),
-        
-        
-
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        ),
+        body: Center(
+          child: RaisedButton(
+            child: Text('change my color'),
+            color: currentC,
+            onPressed: (){
+              showDialog(
+                context: context,
+                builder: (BuildContext ctx){
+                  return AlertDialog(
+                    title: Text('Select a color'),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        SingleChildScrollView(
+                          child: BlockPicker( 
+                          pickerColor: currentC,
+                          onColorChanged: changeC,
+                          availableColors: _defaultColors,
+                          ),
+                        ),
+                        RaisedButton(
+                          child:Text("Close") ,
+                          onPressed: (){
+                            Navigator.pop(ctx);
+                          },
+                        )
+    
+                      ],
+                    ),
+                  );
+                }
+                );
+            },
+    
+            ),
+          
+          
+    
+        ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 
