@@ -33,6 +33,16 @@ enum AuthMode{SignUp,Login}
 class _MyHomePageState extends State<MyHomePage> {
   Color currentC = Colors.teal;
   void changeC(Color color)=>setState(() => currentC=color);
+  
+  final List<Color> _defaultColors = [
+  Colors.red,
+  Colors.pink,
+  Colors.purple,
+  Colors.deepPurple,
+  Colors.indigo,
+  Colors.blue,
+
+];
 
  /* final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode= AuthMode.Login;
@@ -78,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: BlockPicker(
                         pickerColor: currentC,
                         onColorChanged: changeC,
+                        availableColors: _defaultColors,
                         ),
                       ),
                       RaisedButton(
