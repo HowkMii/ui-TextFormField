@@ -68,52 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Auth"),
-          bottom: TabBar(
-            tabs:<Widget> [
-              const Tab(text: 'HSV'),
-              const Tab(text: 'Material'),
-              const Tab(text: 'Block'),
-            ],
-          ),
-        ),
-        body: TabBarView(
-          physics: const NeverScrollableScrollPhysics(),
-          children:<Widget>[
-           Column(
-             mainAxisAlignment: MainAxisAlignment.center,
-             children: <Widget>[
-               RaisedButton(
-                 elevation: 3.0,
-                 onPressed: (){
-                   showDialog(
-                     context: context, 
-                     builder: (BuildContext context){
-                       return AlertDialog(
-                         titlePadding: const EdgeInsets.all(0.0) ,
-                         contentPadding: const EdgeInsets.all(0.0),
-                         content: SingleChildScrollView(
-                           child: ColorPicker(
-                             onColorChanged:changeC,
-                             pickerColor: currentC,
-                            ),
-                          ),
-
-                       );
-                     }
-                    );
-
-                 },
-                ),
-             ],
-          ),
-          ]
-        ), // This trailing comma makes auto-formatting nicer for build methods.
-      ),
+    return Scaffold(
+      
     );
   }
 
