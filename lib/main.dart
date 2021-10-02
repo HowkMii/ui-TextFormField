@@ -30,7 +30,10 @@ class MyHomePage extends StatefulWidget {
 enum AuthMode{SignUp,Login}
 
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<FormState> _formKey = GlobalKey();
+  Color currentC = Colors.teal;
+  void changeC(Color color)=>setState(() => currentC=color);
+
+ /* final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode= AuthMode.Login;
   Map<String, String> _authData ={
     'email':'',
@@ -49,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
               _authMode=AuthMode.Login;
             });
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +62,43 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Auth"),
       ),
       body: Center(
+        child: RaisedButton(
+          child: Text('change my color'),
+          color: currentC,
+          onPressed: (){
+            showDialog(
+              context: context,
+              builder: (BuildContext context){
+                return AlertDialog(
+                  title: Text('Select a color'),
+                  content: Column(
+                    children: <Widget>[
+                      SingleChildScrollView(
+                        child: null,
+                      ),
+                      RaisedButton(
+                        child:Text("Close") ,
+                        onPressed: (){
+                          Navigator.pop(context);
+                        },
+                      )
+
+                    ],
+                  ),
+                );
+              }
+              );
+          },
+
+          ),
+        
+        
+
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
-  void _submit() {
+ /* void _submit() {
     if(_formKey.currentState.validate()){
       return;
 
@@ -74,5 +109,5 @@ class _MyHomePageState extends State<MyHomePage> {
     }else{
 
     }
-  }
+  }*/
 }
