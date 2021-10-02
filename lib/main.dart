@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: (){
             showDialog(
               context: context,
-              builder: (BuildContext context){
+              builder: (BuildContext ctx){
                 return AlertDialog(
                   title: Text('Select a color'),
                   content: Column(
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       RaisedButton(
                         child:Text("Close") ,
                         onPressed: (){
-                          Navigator.pop(context);
+                          Navigator.pop(ctx);
                         },
                       )
 
