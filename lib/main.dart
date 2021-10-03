@@ -76,6 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
           final items = li[index];
           return Dismissible(
             key: Key(items),
+            onDismissed: (DismissDirection){
+              setState(()=>li.removeAt(index));
+              Scaffold.of(ctx).showSnackBar(SnackBar(content:Text("") ,));
+            },
             child: ListTile(title: Center(child:Text(items)),));
         },
 
