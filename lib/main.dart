@@ -78,7 +78,17 @@ class _MyHomePageState extends State<MyHomePage> {
             key: Key(items),
             onDismissed: (DismissDirection){
               setState(()=>li.removeAt(index));
-              Scaffold.of(ctx).showSnackBar(SnackBar(content:Text("") ,));
+              Scaffold.of(ctx).showSnackBar(
+                SnackBar(
+                  content:Text("Item delete") ,
+                  action: SnackBarAction(
+                    label:"Undo" ,
+                    onPressed:(){
+                      setState(() {
+                        li.insert(index, items);
+                      });
+                    } ,
+                  ),));
             },
             child: ListTile(title: Center(child:Text(items)),));
         },
