@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 enum AuthMode{SignUp,Login}
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color currentC = Colors.teal;
+/*  Color currentC = Colors.teal;
   void changeC(Color color)=>setState(() => currentC=color);
   
   final List<Color> _defaultColors = [
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ];
 
- /* final GlobalKey<FormState> _formKey = GlobalKey();
+ final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode= AuthMode.Login;
   Map<String, String> _authData ={
     'email':'',
@@ -64,11 +64,19 @@ class _MyHomePageState extends State<MyHomePage> {
             });
     }
   }*/
-
+  final li =List<String>.generate(20,(index)=>"Item Num ${index + 1}");
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: AppBar(),
+      body: ListView.builder(
+        itemCount: li.length,
+        itemBuilder: (ctx, index){
+
+        },
+
+      ),
       
     );
   }
