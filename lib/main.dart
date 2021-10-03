@@ -73,7 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.builder(
         itemCount: li.length,
         itemBuilder: (ctx, index){
-
+          final items = li[index];
+          return ListTile(title: Center(child:Text(items)),);
         },
 
       ),
