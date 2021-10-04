@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(()=>li.removeAt(index));
               Scaffold.of(ctx).showSnackBar(
                 SnackBar(
-                  content:Text(dir==DismissDirection.startToEnd?"$Item delete") ,
+                  content:Text(dir==DismissDirection.startToEnd?"$items Delete":"$items Liked") ,
                   action: SnackBarAction(
                     label:"Undo" ,
                     onPressed:(){
