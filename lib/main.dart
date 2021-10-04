@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+//import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,46 +32,20 @@ class MyHomePage extends StatefulWidget {
 enum AuthMode{SignUp,Login}
 
 class _MyHomePageState extends State<MyHomePage> {
-/*  Color currentC = Colors.teal;
-  void changeC(Color color)=>setState(() => currentC=color);
-  
-  final List<Color> _defaultColors = [
-  Colors.red,
-  Colors.pink,
-  Colors.purple,
-  Colors.deepPurple,
-  Colors.indigo,
-  Colors.blue,
 
-];
-
- final GlobalKey<FormState> _formKey = GlobalKey();
-  AuthMode _authMode= AuthMode.Login;
-  Map<String, String> _authData ={
-    'email':'',
-    'password':'',
-
-  };
-  var _isLoading = false;
-  final _passwordController = TextEditingController();
-  void _switchAuthMode(){
-    if(_authMode==AuthMode.Login){
-      setState(() {
-              _authMode=AuthMode.SignUp;
-            });
-    }else{
-      setState(() {
-              _authMode=AuthMode.Login;
-            });
-    }
-  }*/
   final li =List<String>.generate(20,(index)=>"Item Num ${index + 1}");
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(),
-      body: ListView.builder(
+      body: Center(
+        
+      )
+
+    );
+  }
+   /*ListView.builder(
         itemCount: li.length,
         itemBuilder: (ctx, index){
           final items = li[index];
@@ -142,10 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
             
         },
 
-      ),
-      
-    );
-  }
+      ),*/
 
  /* void _submit() {
     if(_formKey.currentState.validate()){
@@ -160,3 +132,36 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }*/
 }
+/*  Color currentC = Colors.teal;
+  void changeC(Color color)=>setState(() => currentC=color);
+  
+  final List<Color> _defaultColors = [
+  Colors.red,
+  Colors.pink,
+  Colors.purple,
+  Colors.deepPurple,
+  Colors.indigo,
+  Colors.blue,
+
+];
+
+ final GlobalKey<FormState> _formKey = GlobalKey();
+  AuthMode _authMode= AuthMode.Login;
+  Map<String, String> _authData ={
+    'email':'',
+    'password':'',
+
+  };
+  var _isLoading = false;
+  final _passwordController = TextEditingController();
+  void _switchAuthMode(){
+    if(_authMode==AuthMode.Login){
+      setState(() {
+              _authMode=AuthMode.SignUp;
+            });
+    }else{
+      setState(() {
+              _authMode=AuthMode.Login;
+            });
+    }
+  }*/
