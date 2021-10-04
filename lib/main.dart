@@ -76,11 +76,11 @@ class _MyHomePageState extends State<MyHomePage> {
           final items = li[index];
           return Dismissible(
             key: Key(items),
-            onDismissed: (DismissDirection){
+            onDismissed: (DismissDirection dir){
               setState(()=>li.removeAt(index));
               Scaffold.of(ctx).showSnackBar(
                 SnackBar(
-                  content:Text("Item delete") ,
+                  content:Text(dir==DismissDirection.startToEnd?"$Item delete") ,
                   action: SnackBarAction(
                     label:"Undo" ,
                     onPressed:(){
