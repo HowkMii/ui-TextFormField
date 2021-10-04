@@ -90,10 +90,26 @@ class _MyHomePageState extends State<MyHomePage> {
                     } ,
                   ),));
             },
-            child: ListTile(title: Center(child:Text(items))),
+            confirmDismiss: (DismissDirection dir)async{
+              if(dir ==DismissDirection.startToEnd){
+                final bool res= await showDialog();
+                return res;
+
+              }else{
+                return true;
+              }
+            },
+            child: ListTile(title: Center(child:Text(items))  ),
             background: Container(
               color: Colors.red,
+              alignment: Alignment.centerLeft,
+              child: Icon(Icons.delete),
+            ),
+            secondaryBackground: Container(
+              color: Colors.green,
               alignment: Alignment.centerRight,
+              child: Icon(Icons.thumb_up),
+
             ),
             
             
