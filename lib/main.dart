@@ -92,7 +92,32 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             confirmDismiss: (DismissDirection dir)async{
               if(dir ==DismissDirection.startToEnd){
-                final bool res= await showDialog();
+                final bool res= await showDialog(
+                  context: context,
+                  builder: (BuildContext ctx){
+                    return AlertDialog(
+                      content: Text("Are you sure you want to delete $items?"),
+                      actions: <Widget>[
+                        FlatButton(
+                          onPressed: (){
+                            Navigator.of(ctx).pop();
+                          }, 
+                          child: Text("Cancel",style: TextStyle(color: Colors.black),)
+                        ),
+                        FlatButton(
+                          onPressed: (){
+                            setState(() {
+                              li.removeAt(index);
+                            });
+                            Navigator.of(ctx).pop();
+                          }, 
+                          child: Text("Delete",style: TextStyle(color: Colors.red),)
+                        ),
+                      ],
+                    );
+                  }
+
+                );
                 return res;
 
               }else{
