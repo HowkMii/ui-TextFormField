@@ -42,7 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 500,
           width: double.infinity,
           child: InteractiveViewer(
-            scaleEnabled: false,
+            scaleEnabled: true,
+            minScale: 0.3,
+            maxScale: 1.5,
+            constrained: true,
             child:Image.asset('path of image here' , fit:BoxFit.cover),
             ),
         ),
