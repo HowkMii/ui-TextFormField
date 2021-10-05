@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "to end"
 
   ];
+  List<Color> colorList =List.generate(16, (index) => Colors.primaries[index]);
   @override
   Widget build(BuildContext context) {
 
