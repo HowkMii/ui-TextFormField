@@ -32,14 +32,39 @@ class MyHomePage extends StatefulWidget {
 enum AuthMode{SignUp,Login}
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String>nameList =[
+    "jan",
+    "feb",
+    "mar",
+    "apr",
+    "may",
+    "jun",
+    "jul",
+    "to end"
 
-  final li =List<String>.generate(20,(index)=>"Item Num ${index + 1}");
+  ];
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 18),
+        child: ListWheelScrollView(
+          itemExtent: 100,
+          children:nameList.map((String name){
+            return Container(
+              decoration: BoxDecoration(
+                color: Colors.teal,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(width: 1,color: Colors.red)
+              ),
+              padding: EdgeInsets.all(10),
+              child: Center(child: Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),),
+            );
+          }).toList(),
+        ),
       
       ),
 
