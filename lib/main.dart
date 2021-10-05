@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-enum AuthMode{SignUp,Login}
+
 
 class _MyHomePageState extends State<MyHomePage> {
   List<String>nameList =[
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Color> colorList =List.generate(16, (index) => Colors.primaries[index]);
   @override
   Widget build(BuildContext context) {
-
+    int i=0;
     return Scaffold(
       appBar: AppBar(),
       body: Container(
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children:nameList.map((String name){
             return Container(
               decoration: BoxDecoration(
-                color: Colors.teal,
+                color:colorList[i++],
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(width: 1,color: Colors.red)
               ),
