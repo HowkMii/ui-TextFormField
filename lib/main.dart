@@ -41,7 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           height: 500,
           width: double.infinity,
-          child: InteractiveViewer(child:Image.asset('path of image here' , fit:BoxFit.cover)),
+          child: InteractiveViewer(
+            scaleEnabled: false,
+            child:Image.asset('path of image here' , fit:BoxFit.cover),
+            ),
         ),
        
     
