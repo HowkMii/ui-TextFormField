@@ -32,41 +32,19 @@ class MyHomePage extends StatefulWidget {
 
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String>nameList =[
-    "jan",
-    "feb",
-    "mar",
-    "apr",
-    "may",
-    "jun",
-    "jul",
-    "to end"
-
-  ];
-  List<Color> colorList =List.generate(16, (index) => Colors.primaries[index]);
-  @override
+   @override
   Widget build(BuildContext context) {
     int i=0;
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 18),
-        child: ListWheelScrollView(
-          itemExtent: 100,
-          children:nameList.map((String name){
-            return Container(
-              decoration: BoxDecoration(
-                color:colorList[i++],
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(width: 1,color: Colors.red)
-              ),
-              padding: EdgeInsets.all(10),
-              child: Center(child: Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),),
-            );
-          }).toList(),
+      body: Center(
+        child: Container(
+          height: 500,
+          width: double.infinity,
+          child: InteractiveViewer(child:Image.asset('path of image here' , fit:BoxFit.cover)),
         ),
-      
+       
+    
       ),
 
     );
