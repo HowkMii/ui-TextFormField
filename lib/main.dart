@@ -37,18 +37,29 @@ class _MyHomePageState extends State<MyHomePage> {
     int i=0;
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
-        child: Container(
-          height: 500,
-          width: double.infinity,
-          child: InteractiveViewer(
-            scaleEnabled: true,
-            minScale: 0.3,
-            maxScale: 1.5,
-            constrained: true,
-            child:Image.asset('path of image here' , fit:BoxFit.cover),
-            ),
+      body:  Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            padding: const EdgeInsets.all(0),
+            alignment: Alignment.centerRight,
+            icon: (_isFavorited
+                ? const Icon(Icons.star)
+                : const Icon(Icons.star_border)),
+            color: Colors.red[500],
+            onPressed: _toggleFavorite,
+          ),
         ),
+        SizedBox(
+          width: 18,
+          child: SizedBox(
+            child: Text('$_favoriteCount'),
+          ),
+        ),
+      ],
+    );
        
     
       ),
